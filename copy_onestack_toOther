@@ -1,0 +1,36 @@
+///copy one stack elements to another stack
+import java.util.Scanner;
+import java.util.Stack;
+
+public class ReverseStack {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        Stack<Integer> st=new Stack<>();
+        System.out.println("ENTER THE NUMBER OF ELEMEnT");
+        int s=sc.nextInt();
+        System.out.println("ENTER ELEMENTS");
+        int n;
+        for(int i=1; i<=s; i++)
+        {
+            n=sc.nextInt();
+            st.push(n);
+        }
+        System.out.println(st);
+        Stack<Integer> sr=new Stack<Integer>();
+        while(st.isEmpty()==false)
+        {
+            int x=st.peek();
+            sr.push(x);
+            st.pop();
+        }
+        System.out.println(sr);
+        Stack<Integer> rv= new Stack<>();
+        while (sr.size()>0)
+        {
+            int z=sr.peek();
+            rv.push(z);
+            sr.pop();
+        }
+        System.out.println("AFTER COPY FROM GIVEN STACK : "+rv);
+    }
+}
