@@ -1,0 +1,71 @@
+public class Operation {
+    private  int x;
+    private int idk=0;
+   public int[] arr=new int[5];
+   void push( int x)
+    {
+        if(isFull())
+            System.out.println("STACK IS FULL");
+        else {
+            arr[idk] = x;
+            idk++;
+        }
+    }
+    boolean isFull()
+    {
+        if(idk==arr.length)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    boolean isEmpty(){
+       if(idk==0)
+           return true;
+       else
+           return false;
+    }
+    void display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("NO ELEMENTS");
+        }
+        else {
+        for(int i=0; i<idk;i++) {
+            System.out.print(arr[i] + " ");
+
+        } }
+    }
+
+    int pop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("STACK IS EMPTY");
+        }
+
+            idk--;
+            return idk;
+    }
+
+
+}
+//////////////////////////////driver class code
+import java.util.Scanner;
+
+public class stackArr {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("ENTER PUSH ELEMENT");
+        int z=sc.nextInt();
+       Operation s=new Operation();
+       s.push(z);
+        s.display();
+       s.pop();
+       s.display();
+       
+    }
+
+}
