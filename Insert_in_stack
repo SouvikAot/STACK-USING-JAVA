@@ -1,0 +1,47 @@
+///insert in any position in stack 
+import java.util.Stack;
+import java.util.Scanner;
+public class InsertioninStack {
+    public static void main(String[] args) {
+        Stack<Integer> st=new Stack<Integer>();
+        ///create a stack
+        Scanner sc= new Scanner(System.in);
+        System.out.println("ENTER THE NUMBER OF ELEMEnT");
+        int s=sc.nextInt();
+        System.out.println("ENTER ELEMENTS");
+        int n;
+        for(int i=1; i<=s; i++)
+        {
+            n=sc.nextInt();
+            st.push(n);
+        }
+        System.out.println(st);
+        //insertion in desires position
+        System.out.println("ENTER DESIRED POS");
+        int pos= sc.nextInt();
+        System.out.println("ENTER DATA");
+        int data= sc.nextInt();
+        Stack<Integer> sr= new Stack<Integer>();
+        while(st.size()>=pos)
+        {
+            int t= st.peek();
+            sr.push(t);
+            st.pop();
+        }
+        sr.push(data);
+        while(st.size()>0)
+        {
+            int t=st.peek();
+            sr.push(t);
+            st.pop();
+        }
+        System.out.println(sr);
+        while(sr.isEmpty()==false)
+        {
+            int t=sr.peek();
+            st.push(t);
+            sr.pop();
+        }
+        System.out.println(st);
+    }
+}
