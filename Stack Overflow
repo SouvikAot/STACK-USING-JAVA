@@ -1,0 +1,29 @@
+import java.util.EmptyStackException;
+import java.util.Scanner;
+import java.util.Stack;
+public class Overflow {
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+        st.push(10);
+        st.push(20);
+        st.push(30);
+        st.push(40);
+        int choice=1;
+        Scanner sc= new Scanner(System.in);
+        try{
+            while (choice!=0) {
+                if (st.peek() != 0) {
+                    System.out.println(st);
+                    st.pop();
+                }
+                System.out.println("DO YOU WANT TO PUSH POP AGAIN");
+                choice=sc.nextInt();
+            }
+        }
+        catch( EmptyStackException e){
+            System.out.println("STACK IS UNDERFLOW");
+        }
+
+    }
+}
+
